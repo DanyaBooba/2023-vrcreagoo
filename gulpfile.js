@@ -54,9 +54,16 @@ function browser(done) {
     done();
 }
 
+function img(done) {
+    gulp.src('./src/img/**/*')
+        .pipe(gulp.dest('./dist/img'));
+
+    done();
+}
+
 function assets(done) {
     gulp.src('./src/--i/**/*')
-        .pipe('./dist/i');
+        .pipe(gulp.dest('./dist/i'));
 
     done();
 }
@@ -78,6 +85,7 @@ gulp.task('default', gulp.series(
         javascript,
         php,
         css,
+        img,
         assets
     ),
     browser
@@ -88,6 +96,7 @@ gulp.task('build', gulp.parallel(
         javascript,
         php,
         css,
+        img,
         assets
 ));
 
@@ -96,6 +105,7 @@ gulp.task('test', gulp.parallel(
         javascript,
         php,
         css,
+        img,
         assets,
         test
 ));
