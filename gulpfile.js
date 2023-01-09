@@ -54,12 +54,31 @@ function browser(done) {
     done();
 }
 
+function assets(done) {
+    gulp.src('./src/--i/**/*')
+        .pipe('./dist/i');
+
+    done();
+}
+
+function test(done) {
+    gulp.src('./src/__/html/**/*.html')
+        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.src('./src/__/php/**/*.php'))
+        .pipe(gulp.dest('./dist/php'))
+        .pipe(gulp.src('./src/__/js/**/*.js'))
+        .pipe(gulp.dest('./dist/js'));
+
+    done();
+}
+
 gulp.task('default', gulp.series(
     gulp.parallel(
         html,
         javascript,
         php,
-        css
+        css,
+        assets
     ),
     browser
 ));
@@ -68,5 +87,15 @@ gulp.task('build', gulp.parallel(
         html,
         javascript,
         php,
-        css
+        css,
+        assets
+));
+
+gulp.task('test', gulp.parallel(
+        html,
+        javascript,
+        php,
+        css,
+        assets,
+        test
 ));
