@@ -1,12 +1,12 @@
 var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'); // 7.0.0
 var htmlmin = require('gulp-htmlmin');
-var fileinclude = require('gulp-file-include');
 var uglify = require('gulp-uglify');
 var sync = require('browser-sync').create();
-var cssmin = require('gulp-cssmin');
-var concatCss = require('gulp-concat-css');
-var autoprefixer = require('gulp-autoprefixer');
+// var cssmin = require('gulp-cssmin');
+// var autoprefixer = require('gulp-autoprefixer');
+// var concatCss = require('gulp-concat-css');
+// var fileinclude = require('gulp-file-include');
 // var replace = require('gulp-replace');
 // var webpHtmlNoSvg = require('gulp-webp-html-nosvg');
 // var csso = require('gulp-csso');
@@ -15,7 +15,7 @@ var autoprefixer = require('gulp-autoprefixer');
 // var concat = require('gulp-concat');
 
 function html(done) {
-    gulp.src('./src/html/**/*.html')
+    gulp.src('./src/index.html')
         .pipe(gulp.dest('./dist'));
     done();
 }
@@ -68,6 +68,13 @@ function assets(done) {
     done();
 }
 
+function staticfolder(done) {
+    gulp.src('./src/static/**/*')
+        .pipe(gulp.dest('./dist/static'));
+
+    done();
+}
+
 function test(done) {
     gulp.src('./src/__/html/**/*.html')
         .pipe(gulp.dest('./dist'))
@@ -86,6 +93,7 @@ gulp.task('default', gulp.series(
         php,
         css,
         img,
+        staticfolder,
         assets
     ),
     browser
@@ -97,6 +105,7 @@ gulp.task('build', gulp.parallel(
         php,
         css,
         img,
+        staticfolder,
         assets
 ));
 
@@ -107,5 +116,6 @@ gulp.task('test', gulp.parallel(
         css,
         img,
         assets,
+        staticfolder,
         test
 ));
