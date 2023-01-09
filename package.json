@@ -1,0 +1,22 @@
+{
+  "name": "vr-creagoo",
+  "version": "1.0.0",
+  "description": "vr.creagoo.ru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanyaBooba/2023-vrcreagoo.git"
+  },
+  "author": "Daniil Dybka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanyaBooba/2023-vrcreagoo/issues"
+  },
+  "homepage": "https://github.com/DanyaBooba/2023-vrcreagoo#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
