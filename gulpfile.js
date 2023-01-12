@@ -3,18 +3,8 @@ var imagemin = require('gulp-imagemin'); // 7.0.0
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
 var sync = require('browser-sync').create();
-// var cssmin = require('gulp-cssmin');
-// var autoprefixer = require('gulp-autoprefixer');
-// var concatCss = require('gulp-concat-css');
-// var fileinclude = require('gulp-file-include');
-// var replace = require('gulp-replace');
-// var webpHtmlNoSvg = require('gulp-webp-html-nosvg');
-// var csso = require('gulp-csso');
-// var ttf2woff2 = require('gulp-ttf2woff2');
-// var webp = require('gulp-webp');
-// var concat = require('gulp-concat');
 
-function html(done) {
+function pages(done) {
     gulp.src('./src/index.html')
         .pipe(gulp.dest('./dist'));
     done();
@@ -88,7 +78,7 @@ function test(done) {
 
 gulp.task('default', gulp.series(
     gulp.parallel(
-        html,
+        pages,
         javascript,
         php,
         css,
@@ -100,7 +90,7 @@ gulp.task('default', gulp.series(
 ));
 
 gulp.task('build', gulp.parallel(
-        html,
+        pages,
         javascript,
         php,
         css,
@@ -110,7 +100,7 @@ gulp.task('build', gulp.parallel(
 ));
 
 gulp.task('test', gulp.parallel(
-        html,
+        pages,
         javascript,
         php,
         css,

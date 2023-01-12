@@ -1,9 +1,11 @@
-// Основной файл
+// обновление интерфейса локации
+
+// 12.01.2023
 
 let interval = 200;
 let objCount = 16;
 
-let jsonFile = '/json/index.txt';
+let jsonFile = '/php/json/jsonfile.txt';
 let idName = 't';
 
 let main_array = [];
@@ -11,13 +13,12 @@ let main_array = [];
 $(function() {
     var scene = document.querySelector('a-scene');
 
-    // SetImageOnce();
     ReData();
-    
+
     setInterval(function() {
       ReData();
   }, interval);
-    
+
     function ReData() {
       var data = null;
       $.ajax({
@@ -137,7 +138,7 @@ $(function() {
 
       //IsOn
       if($('#' + idName + i + '__ison').length){
-        
+
         bool = item["IsON"];
 
         $('#' + idName + i + '__ison')[0].setAttribute('text', {
@@ -176,7 +177,7 @@ $(function() {
         $('#' + idName + i + '__reqpower')[0].setAttribute('text', {
           value: Math.round(item["RequiredPower"]) + ' kWt',
         });
-      }      
+      }
 
       //Image
       if($('#im' + i).length){

@@ -1,7 +1,7 @@
 <?php
 function ReturnData()
 {
-    $list = [
+    return [
         [
             "needactive" => false,
             "id" => "Solar Battery",
@@ -288,6 +288,4 @@ function ReturnData()
             ],
         ],
     ];
-
-    return $list;
 }

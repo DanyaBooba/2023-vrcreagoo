@@ -1,19 +1,21 @@
 <?php
 
-function IfNull($a){
-    if(!isset($a)) return "<i>Null</i>";
+function IfNull($a)
+{
+    if (!isset($a)) return "<i>Null</i>";
     return $a;
 }
 
-function IsON($bool){
-    if($bool) return "ON";
+function IsON($bool)
+{
+    if ($bool) return "ON";
     return "OFF";
 }
 
 $jsonfile = file_get_contents("index.txt");
 $array = json_decode($jsonfile);
 
-foreach($array as $b){
+foreach ($array as $b) {
     var_dump($b);
     echo "<br>";
 }
@@ -98,8 +100,8 @@ foreach($array as $b){
                         <?php echo IfNull($item->Power) ?>
                     </td>
                 </tr>
-                
-                <?php $c+=1; ?>
+
+                <?php $c += 1; ?>
             <?php endforeach; ?>
 
         </table>
@@ -108,3 +110,25 @@ foreach($array as $b){
 </body>
 
 </html>
+
+
+
+
+<?php
+
+$path = "index.txt";
+$json = file_get_contents($path);
+$parsejson = json_decode($json, true);
+?>
+
+<h1>
+    Json
+</h1>
+<p>
+    <?php var_dump($json) ?>
+</p>
+
+<h2>
+    List
+</h2>
+<pre><?php var_dump($parsejson) ?></pre>
