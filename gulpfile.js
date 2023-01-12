@@ -53,6 +53,16 @@ function staticfolder(done) {
     done();
 }
 
+gulp.task('default', gulp.parallel(
+    pages,
+    javascript,
+    php,
+    css,
+    img,
+    staticfolder,
+    assets
+));
+
 // function test(done) {
 //     gulp.src('./src/__/html/**/*.html')
 //         .pipe(gulp.dest('./dist'))
@@ -63,16 +73,6 @@ function staticfolder(done) {
 
 //     done();
 // }
-
-gulp.task('default', gulp.parallel(
-    pages,
-    javascript,
-    php,
-    css,
-    img,
-    staticfolder,
-    assets
-));
 
 // gulp.task('test', gulp.parallel(
 //         pages,
