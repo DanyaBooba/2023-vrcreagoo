@@ -33,7 +33,7 @@
         <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__genpow" scale="1 1 1" position="-3.321 -1.662 0.303" rotation="0 90 0"></a-entity>
         <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.729 0.303" rotation="0 90 0"></a-entity>
 
-        <a-image src="/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.662 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
+        <a-image src="/assets/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.662 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
 
         <?php $c = 1 ?>
         <?php for ($i = 0; $i < count($gblist); $i++) : ?>
@@ -55,7 +55,7 @@
                 <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.863 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
             <?php endif; ?>
 
-            <a-image src="/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.662 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 0.8" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
+            <a-image src="/assets/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.662 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 0.8" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
 
             <?php $c += 1 ?>
         <?php endfor; ?>
@@ -63,7 +63,7 @@
         <!-- <a-image src="https://creagoo.ru/i/img/design/f1/creagoo.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="0 0 0" material="opacity: 0.8" rotation="0 0 0" id="example123"></a-image> -->
         <!-- <a-image id="eventImage" opacity="0" position="0 -1.5 0" width="5.3" height="3" scale="0.12 0.12 0.12" src="https://cdn.otkritkiok.ru/posts/big/panda-67161.jpg" animation__opacity="startEvents: materialtextureloaded; property: components.material.material.opacity; to: 1; dur: 1" animation__rotation="startEvents: materialtextureloaded; property: rotation; from: 0 0 0; to: 0 0 0; dur: 2500" animation__position="startEvents: materialtextureloaded; property: position; to: 0 -1.5 0; dur: 3000" material="" geometry=""></a-image> -->
 
-        <a-sky src="/img/sky.jpg" rotation="0 -130 0"></a-sky>
+        <a-sky src="/assets/img/sky.jpg" rotation="0 -130 0"></a-sky>
         <a-camera scale="0.5 0.5 0.5" position="0 -1.45 0">
             <a-cursor></a-cursor>
         </a-camera>

@@ -2,13 +2,11 @@
 
 // 12.01.2023
 
-let interval = 200;
 let objCount = 16;
-
-let jsonFile = '/php/json/jsonfile.txt';
-let idName = 't';
+let interval = 200;
 
 let main_array = [];
+let jsonFile = '/php/json/jsonfile.txt';
 
 $(function() {
   setInterval(function() {
@@ -77,7 +75,7 @@ $(function() {
   function GetUpdateInterface(i){
 
     let item = main_array[i];
-    let activeName = '#' + idName + i;
+    let activeName = '#' + 't' + i;
 
     let id = $(activeName + '__id');
     let ison = $(activeName + '__ison');
@@ -122,10 +120,10 @@ $(function() {
           state = "_disable";
         }
 
-        image[0].setAttribute('src', '/img/' + GetNameBuildByIndex(i) + state + '.jpg');
+        image[0].setAttribute('src', '/assets/img/' + GetNameBuildByIndex(i) + state + '.jpg');
       }
       else {
-        image[0].setAttribute('src', '/img/' + GetNameBuildByIndex(i) + '.jpg');
+        image[0].setAttribute('src', '/assets/img/' + GetNameBuildByIndex(i) + '.jpg');
       }
     }
 

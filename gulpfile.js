@@ -2,11 +2,12 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'); // 7.0.0
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
-var sync = require('browser-sync').create();
 
 function pages(done) {
-    gulp.src('./src/index.html')
-        .pipe(gulp.dest('./dist'));
+    gulp.src('./src/index.php')
+        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.src('./src/more/**/*.php'))
+        .pipe(gulp.dest('./dist/more'));
     done();
 }
 
@@ -25,35 +26,22 @@ function php(done) {
 }
 
 function css(done) {
-    gulp.src('./src/css/**/*.css')
-        .pipe(gulp.dest('./dist/css'));
-
-    done();
-}
-
-function browser(done) {
-    sync.init({
-        server: './dist'
-    });
-
-    gulp.watch('./src/**/*.html', html).on('change', sync.reload);
-    gulp.watch('./src/**/*.js', javascript).on('change', sync.reload);
-    gulp.watch('./src/**/*.php', php).on('change', sync.reload);
-    gulp.watch('./src/**/*.css', css).on('change', sync.reload);
+    gulp.src('./src/assets/css/**/*.css')
+        .pipe(gulp.dest('./dist/assets/css'));
 
     done();
 }
 
 function img(done) {
-    gulp.src('./src/img/**/*')
-        .pipe(gulp.dest('./dist/img'));
+    gulp.src('./src/assets/img/**/*')
+        .pipe(gulp.dest('./dist/assets/img'));
 
     done();
 }
 
 function assets(done) {
-    gulp.src('./src/--i/**/*')
-        .pipe(gulp.dest('./dist/i'));
+    gulp.src('./src/assets/models/**/*')
+        .pipe(gulp.dest('./dist/assets/models'));
 
     done();
 }
@@ -65,47 +53,34 @@ function staticfolder(done) {
     done();
 }
 
-function test(done) {
-    gulp.src('./src/__/html/**/*.html')
-        .pipe(gulp.dest('./dist'))
-        .pipe(gulp.src('./src/__/php/**/*.php'))
-        .pipe(gulp.dest('./dist/php'))
-        .pipe(gulp.src('./src/__/js/**/*.js'))
-        .pipe(gulp.dest('./dist/js'));
+// function test(done) {
+//     gulp.src('./src/__/html/**/*.html')
+//         .pipe(gulp.dest('./dist'))
+//         .pipe(gulp.src('./src/__/php/**/*.php'))
+//         .pipe(gulp.dest('./dist/php'))
+//         .pipe(gulp.src('./src/__/js/**/*.js'))
+//         .pipe(gulp.dest('./dist/js'));
 
-    done();
-}
+//     done();
+// }
 
-gulp.task('default', gulp.series(
-    gulp.parallel(
-        pages,
-        javascript,
-        php,
-        css,
-        img,
-        staticfolder,
-        assets
-    ),
-    browser
+gulp.task('default', gulp.parallel(
+    pages,
+    javascript,
+    php,
+    css,
+    img,
+    staticfolder,
+    assets
 ));
 
-gulp.task('build', gulp.parallel(
-        pages,
-        javascript,
-        php,
-        css,
-        img,
-        staticfolder,
-        assets
-));
-
-gulp.task('test', gulp.parallel(
-        pages,
-        javascript,
-        php,
-        css,
-        img,
-        assets,
-        staticfolder,
-        test
-));
+// gulp.task('test', gulp.parallel(
+//         pages,
+//         javascript,
+//         php,
+//         css,
+//         img,
+//         assets,
+//         staticfolder,
+//         test
+// ));

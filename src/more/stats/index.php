@@ -7,7 +7,7 @@ if (!R::testConnection()) exit("Do not have a connection to DB.");
 $results = R::getAll("SELECT * FROM webvrstats");
 ?>
 
-<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
 <div class="container">
     <?php if ($results[2] == "0") : ?>
