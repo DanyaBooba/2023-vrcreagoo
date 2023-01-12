@@ -130,118 +130,79 @@ $(function() {
   }
 
   function GetNameBuildByIndex(i) {
-    if(i === 1) {
-      return "solarbattery1";
-    }
-    else if(i === 2) {
-      return "minisubstation1";
-    }
-    else if(i === 3) {
-      return "minisubstation2";
-    }
-    else if(i === 4) {
-      return "hospital2";
-    }
-    else if(i === 5) {
-      return "factory2";
-    }
-    else if(i === 6) {
-      return "md1";
-    }
-    else if(i === 7) {
-      return "md2";
-    }
-    else if(i === 8) {
-      return "md3";
-    }
-    else if(i === 9) {
-      return "md4";
-    }
-    else if(i === 10) {
-      return "md5";
-    }
-    else if(i === 11) {
-      return "md6";
-    }
-    else if(i === 12) {
-      return "factory1";
-    }
-    else if(i === 13) {
-      return "hospital1";
-    }
-    else if(i === 14) {
-      return "solarbattery2";
-    }
-    else if(i === 15) {
-      return "windgenerator";
-    }
+    if (i === 1) { return "solarbattery1" }
+
+    if (i === 2) { return "minisubstation1" }
+
+    if (i === 3) { return "minisubstation2" }
+
+    if (i === 4) { return "hospital2" }
+
+    if (i === 5) { return "factory2" }
+
+    if (i === 6) { return "md1" }
+
+    if (i === 7) { return "md2" }
+
+    if (i === 8) { return "md3" }
+
+    if (i === 9) { return "md4" }
+
+    if (i === 10) { return "md5" }
+
+    if (i === 11) { return "md6" }
+
+    if (i === 12) { return "factory1" }
+
+    if (i === 13) { return "hospital1" }
+
+    if (i === 14) { return "solarbattery2" }
+
+    if(i === 15) { return "windgenerator" }
   }
 
   function GetStaticBoolInformation(i) {
     if(i === 1 || i === 2 || i === 3 || i === 14 || i === 15) {
       return false;
     }
-    else {
-      return true;
-    }
+    return true;
   }
 
   function HumansNamesBuilds(key){
-    if(key === null){
-      return "null";
-    }
 
-    if(key === "Microdistrict 1"){
-      return "MD No. 1";
-    }
-    else if(key === "Microdistrict 2"){
-      return "MD No. 2";
-    }
-    else if(key === "Microdistrict 3"){
-      return "MD No. 3";
-    }
-    else if(key === "Microdistrict 4"){
-      return "MD No. 4";
-    }
-    else if(key === "Microdistrict 5"){
-      return "MD No. 5";
-    }
-    else if(key === "Microdistrict 6"){
-      return "MD No. 6";
-    }
-    else if(key === "Hospital 1"){
-      return "Hospital No. 1";
-    }
-    else if(key === "Hospital 2"){
-      return "Hospital No. 2";
-    }
-    else if(key === "Wind Generator"){
-      return "Wind Generator";
-    }
-    else if(key === "Factory 1"){
-      return "Factory No. 1";
-    }
-    else if(key === "Factory 2"){
-      return "Factory No. 2";
-    }
-    else if(key === "Solar Battery 1"){
-      return "Solar Battery";
-    }
-    else if(key === "Solar Battery 2"){
-      return "Solar Battery";
-    }
-    else if(key === "Substation"){
-      return "Substation";
-    }
-    else if(key === "Mini Substation 1"){
-      return "Mini Substation";
-    }
-    else if(key === "Mini Substation 2"){
-      return "Mini Substation";
-    }
-    else{
-      return key;
-    }
+    if (key === "Microdistrict 1") { return "MD No. 1" }
+
+    if (key === "Microdistrict 2") { return "MD No. 2" }
+
+    if (key === "Microdistrict 3") { return "MD No. 3" }
+
+    if (key === "Microdistrict 4") { return "MD No. 4" }
+
+    if (key === "Microdistrict 5") { return "MD No. 5" }
+
+    if (key === "Microdistrict 6") { return "MD No. 6" }
+
+    if (key === "Hospital 1") { return "Hospital No. 1" }
+
+    if (key === "Hospital 2") { return "Hospital No. 2" }
+
+    if (key === "Wind Generator") { return "Wind Generator" }
+
+    if (key === "Factory 1") { return "Factory No. 1" }
+
+    if (key === "Factory 2") { return "Factory No. 2" }
+
+    if (key === "Solar Battery 1") { return "Solar Battery" }
+
+    if (key === "Solar Battery 2") { return "Solar Battery" }
+
+    if (key === "Substation") { return "Substation" }
+
+    if (key === "Mini Substation 1") { return "Mini Substation" }
+
+    if (key === "Mini Substation 2") { return "Mini Substation" }
+
+    return "null";
   }
 
   function InterfaceStateBuild(value){
@@ -251,7 +212,6 @@ $(function() {
     if (value === false) { return "Disabled"; }
 
     if (value === true) { return "Working"; }
-
   }
 
 });
