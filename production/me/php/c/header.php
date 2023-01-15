@@ -1,7 +1,7 @@
 <header class="container" style="margin-top: 30px; margin-bottom: 30px;">
     <div class="d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-centermb-md-0 me-md-auto text-dark text-decoration-none">
-            <span class="fs-4">Smart city prototype</span>
+            <span class="fs-4">Прототип умного города</span>
         </a>
 
         <ul class="nav">

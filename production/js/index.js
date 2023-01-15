@@ -88,16 +88,21 @@ $(function() {
     }
 
     if (genpower.length) {
-      if (item["ID"] != "Substation") {
-        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + '/100 kWt' });
+      if (item["GeneratedPower"] >= 100) {
+        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + ' kWt' });
       }
       else {
-        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + ' kWt' });
+        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + '/100 kWt' });
       }
     }
 
     if(reqpower.length){
-      reqpower[0].setAttribute('text', { value: Math.round(item["RequiredPower"]) + '/100 kWt' });
+      if (item["RequiredPower"] >= 100) {
+        reqpower[0].setAttribute('text', { value: Math.round(item["RequiredPower"]) + ' kWt' });
+      }
+      else {
+        reqpower[0].setAttribute('text', { value: Math.round(item["RequiredPower"]) + '/100 kWt' });
+      }
     }
 
     if(imageLink.length){
