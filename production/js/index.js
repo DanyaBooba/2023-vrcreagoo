@@ -1,8 +1,8 @@
 // обновление интерфейса локации
 
-// 14.01.2023
+// 15.01.2023
 
-let interval = 200;
+let interval = 300;
 let objCount = 16;
 
 let main_array = [];
@@ -19,13 +19,13 @@ $(function() {
         console.log('File is empty');
       }
       else if (data !== null) {
-
         GetBuilds(data);
         for(var i = 0; i < main_array.length; i++){
           UpdateInterface(i);
         }
-
       }
+
+      UpdateCameraImage();
     });
   }, interval);
 
@@ -167,6 +167,26 @@ $(function() {
     if (value === false) { return "Disable"; }
     if (value === true) { return "Active"; }
     return "Disable";
+  }
+
+  function UpdateCameraImage()
+  {
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "/img/camera/ver.txt", false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var number = rawFile.responseText;
+                $('#cameraview')[0].setAttribute('src', '/img/camera/camera_' + number + '.jpg');
+
+                console.log('readfile: ' + number);
+            }
+        }
+    }
+    rawFile.send(null);
   }
 
 });
