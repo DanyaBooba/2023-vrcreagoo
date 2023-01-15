@@ -54,7 +54,7 @@
         <a-entity text="value: Active; color: #E5E5E5; align: left;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.52 -1.23" rotation="0 90 0"></a-entity>
 
         <a-image src="/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.76 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
-        <a-image src="/img/substation1.jpg" onClick="readFile()" width="5.33" height="3" scale="0.32 0.32 0.32" position="-3.172 -1.35 1.791" material="opacity: 1" rotation="0 -45 0" id="cameraview"></a-image>
+        <a-image src="/img/substation1.jpg" onClick="readFile()" width="5.33" height="3" scale="0.32 0.32 0.32" position="-3.172 -1.463 1.791" material="opacity: 1" rotation="0 -45 0" id="cameraview"></a-image>
 
         <?php $c = 1 ?>
         <?php for ($i = 0; $i < count($gblist); $i++) : ?>
