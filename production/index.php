@@ -39,22 +39,22 @@
         <?php for ($i = 0; $i < count($gblist); $i++) : ?>
 
             <?php if ($gblist[$i]["click"]["on"]) : ?>
-                <a-plane onClick="MainOnClick('<?php echo $gblist[$i]["click"]["jsname"] ?>', <?php echo $c ?>)" id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.662 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>" scale="0.4 0.56 1"></a-plane>
+                <a-plane onClick="MainOnClick('<?php echo $gblist[$i]["click"]["jsname"] ?>', <?php echo $c ?>)" id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
             <?php else : ?>
-                <a-plane id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.662 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>" scale="0.4 0.56 1"></a-plane>
+                <a-plane id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
             <?php endif; ?>
 
-            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__id" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.464 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__genpow" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.631 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__reqpower" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.743 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
+            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__id" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.464 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
+            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__genpow" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.631 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
+            <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__reqpower" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.743 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
 
             <?php if ($gblist[$i]["needactive"]) : ?>
-                <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #000000; align: center;" id="t<?php echo $c ?>__ison" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.855 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
+                <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #000000; align: center;" id="t<?php echo $c ?>__ison" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.855 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
             <?php else : ?>
-                <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.855 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] + 20) . " 0" ?>"></a-entity>
+                <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.855 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
             <?php endif; ?>
 
-            <a-image src="/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.662 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 0.8" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
+            <a-image src="/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.76 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 0.8" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
 
             <?php $c += 1 ?>
         <?php endfor; ?>
