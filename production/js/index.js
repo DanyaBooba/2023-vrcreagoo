@@ -88,7 +88,12 @@ $(function() {
     }
 
     if (genpower.length) {
-      genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + '/100 kWt' });
+      if (item["ID"] != "Substation") {
+        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + '/100 kWt' });
+      }
+      else {
+        genpower[0].setAttribute('text', { value: Math.round(item["GeneratedPower"]) + ' kWt' });
+      }
     }
 
     if(reqpower.length){
@@ -135,11 +140,11 @@ $(function() {
 
   function HumansNamesBuilds(key) {
     if (key === "Substation") { return "Substation" }
-    if (key === "Mini Substation 1") { return "Mini Substation" }
-    if (key === "Mini Substation 2") { return "Mini Substation" }
+    if (key === "Mini Substation 1") { return "Mini Sub. No. 1" }
+    if (key === "Mini Substation 2") { return "Mini Sub. No. 2" }
     if (key === "Wind Generator") { return "Wind Generator" }
-    if (key === "Solar Battery 1") { return "Solar Battery" }
-    if (key === "Solar Battery 2") { return "Solar Battery" }
+    if (key === "Solar Battery 1") { return "Solar Batt. No. 1" }
+    if (key === "Solar Battery 2") { return "Solar Batt. No. 2" }
     if (key === "Microdistrict 1") { return "MD No. 1" }
     if (key === "Microdistrict 2") { return "MD No. 2" }
     if (key === "Microdistrict 3") { return "MD No. 3" }

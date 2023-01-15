@@ -1,19 +1,21 @@
 <?php
 
-function IfNull($a){
-    if(!isset($a)) return "<i>Null</i>";
+function IfNull($a)
+{
+    if (!isset($a)) return "<i>Null</i>";
     return $a;
 }
 
-function IsON($bool){
-    if($bool) return "ON";
+function IsON($bool)
+{
+    if ($bool) return "ON";
     return "OFF";
 }
 
 $jsonfile = file_get_contents("index.txt");
 $array = json_decode($jsonfile);
 
-foreach($array as $b){
+foreach ($array as $b) {
     var_dump($b);
     echo "<br>";
 }
@@ -26,7 +28,7 @@ foreach($array as $b){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WEBVR Table</title>
+    <title>Smart city prototype — table</title>
 
     <style>
         table {
@@ -62,7 +64,7 @@ foreach($array as $b){
 </head>
 
 <body>
-    <h1>WEBVR Table</h1>
+    <h1>Smart city prototype — table</h1>
 
     <div id="table" class="table" style="margin: 0 auto; margin-top: 10rem; margin-bottom: 10rem;">
         <table>
@@ -98,8 +100,8 @@ foreach($array as $b){
                         <?php echo IfNull($item->Power) ?>
                     </td>
                 </tr>
-                
-                <?php $c+=1; ?>
+
+                <?php $c += 1; ?>
             <?php endforeach; ?>
 
         </table>

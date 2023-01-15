@@ -1,15 +1,13 @@
-<header style="margin-top: 30px; margin-bottom: 30px;">
+<header class="container" style="margin-top: 30px; margin-bottom: 30px;">
     <div class="d-flex flex-wrap justify-content-center">
         <a href="/" class="d-flex align-items-centermb-md-0 me-md-auto text-dark text-decoration-none">
-            <span class="fs-4">Simple header</span>
+            <span class="fs-4">Smart city prototype</span>
         </a>
 
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <ul class="nav">
+            <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="/me/updates.php" class="nav-link">Изменения</a></li>
+            <li class="nav-item"><a href="/me/reg.php" class="nav-link">Доступ</a></li>
         </ul>
     </div>
 </header>

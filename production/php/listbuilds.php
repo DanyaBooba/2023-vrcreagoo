@@ -5,8 +5,8 @@ function ReturnData()
         [
             "needactive" => false,
             "id" => "Solar Battery",
-            "x" => "-2.209",
-            "z" => "1.195",
+            "x" => "-3.206",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => false,
@@ -24,8 +24,8 @@ function ReturnData()
         [
             "needactive" => false,
             "id" => "Mini Substation 1",
-            "x" => "-2.718",
-            "z" => "-1.510",
+            "x" => "-2.075",
+            "z" => "-1.511",
             "rotation" => "0",
             "click" => [
                 "on" => false,
@@ -43,8 +43,8 @@ function ReturnData()
         [
             "needactive" => false,
             "id" => "Mini Substation 2",
-            "x" => "-0.535",
-            "z" => "1.195",
+            "x" => "-1.582",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => false,
@@ -62,8 +62,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "Hospital 2",
-            "x" => "-1.273",
-            "z" => "-1.510",
+            "x" => "-0.303",
+            "z" => "-1.573",
             "rotation" => "0",
             "click" => [
                 "on" => true,
@@ -81,8 +81,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "Factory 2",
-            "x" => "1.314",
-            "z" => "1.195",
+            "x" => "0.157",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => true,
@@ -100,8 +100,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 1",
-            "x" => "2.295",
-            "z" => "-1.649",
+            "x" => "2.739",
+            "z" => "-1.577",
             "rotation" => "0",
             "click" => [
                 "on" => true,
@@ -119,8 +119,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 2",
-            "x" => "3.132",
-            "z" => "-1.649",
+            "x" => "3.581",
+            "z" => "-1.577",
             "rotation" => "0",
             "click" => [
                 "on" => true,
@@ -138,8 +138,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 3",
-            "x" => "3.988",
-            "z" => "-1.649",
+            "x" => "4.4",
+            "z" => "-1.577",
             "rotation" => "0",
             "click" => [
                 "on" => true,
@@ -157,8 +157,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 4",
-            "x" => "2.842",
-            "z" => "1.308",
+            "x" => "2.274",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => true,
@@ -176,8 +176,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 5",
-            "x" => "3.644",
-            "z" => "1.308",
+            "x" => "3.229",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => true,
@@ -195,8 +195,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "MD 6",
-            "x" => "4.667",
-            "z" => "1.308",
+            "x" => "4.023",
+            "z" => "1.196",
             "rotation" => "180",
             "click" => [
                 "on" => true,
@@ -214,8 +214,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "Factory 1",
-            "x" => "5.464",
-            "z" => "-1.576",
+            "x" => "6.732",
+            "z" => "-1.577",
             "rotation" => "0",
             "click" => [
                 "on" => true,
@@ -233,8 +233,8 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "Hospital 1",
-            "x" => "8.409",
-            "z" => "1.166",
+            "x" => "7.43",
+            "z" => "1.167",
             "rotation" => "180",
             "click" => [
                 "on" => true,
@@ -252,8 +252,8 @@ function ReturnData()
         [
             "needactive" => false,
             "id" => "Solar Battery 2",
-            "x" => "8.380",
-            "z" => "-1.554",
+            "x" => "9.543",
+            "z" => "-1.555",
             "rotation" => "0",
             "click" => [
                 "on" => false,
@@ -271,8 +271,8 @@ function ReturnData()
         [
             "needactive" => false,
             "id" => "Wind Generator",
-            "x" => "9.661",
-            "z" => "1.166",
+            "x" => "8.834",
+            "z" => "1.167",
             "rotation" => "180",
             "click" => [
                 "on" => false,

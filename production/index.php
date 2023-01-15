@@ -28,24 +28,24 @@
         <a-entity id="Винт Ветрогенератора 3" scale="0.12 0.12 0.12" position="-6.333 0.266 -3.007" rotation="-180 0 0" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -540 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
         <a-entity id="Винт Мини Ветрогенератора" scale="0.12 0.12 0.12" position="9.336 -1.207 1.985" gltf-model="/models/windMiniTurbinePropeller.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1000; easing: linear;"></a-entity>
 
-        <a-plane id="Плейн Подстанция [1]" material="color: #696969; opacity: 0.65;" position="-3.321 -1.662 0.303" rotation="0 90 0" scale="0.4 0.56 1"></a-plane>
-        <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__id" scale="1 1 1" position="-3.321 -1.598 0.303" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__genpow" scale="1 1 1" position="-3.321 -1.662 0.303" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.729 0.303" rotation="0 90 0"></a-entity>
+        <a-plane id="Плейн Подстанция [1]" material="color: #000; opacity: 0.5;" position="-3.322 -1.6 -1.047" rotation="0 90 0" scale="0.72 0.63 1"></a-plane>
+        <a-entity text="value: Substation; color: #ffffff; align: left;" id="t0__id" scale="1 1 1" position="-3.321 -1.356 -1.23" rotation="0 90 0"></a-entity>
+        <a-entity text="value: Substation; color: #ffffff; align: left;" id="t0__genpow" scale="1 1 1" position="-3.321 -1.44 -1.23" rotation="0 90 0"></a-entity>
+        <a-entity text="value: Active; color: #E5E5E5; align: left;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.52 -1.23" rotation="0 90 0"></a-entity>
 
-        <a-image src="/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.662 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
+        <a-image src="/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.76 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
 
         <?php $c = 1 ?>
         <?php for ($i = 0; $i < count($gblist); $i++) : ?>
 
             <?php if ($gblist[$i]["click"]["on"]) : ?>
-                <a-plane onClick="MainOnClick('<?php echo $gblist[$i]["click"]["jsname"] ?>', <?php echo $c ?>)" id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
+                <a-plane onClick="MainOnClick('<?php echo $gblist[$i]["click"]["jsname"] ?>', <?php echo $c ?>)" id="<?php echo $gblist[$i]["id"] ?>" material="color: #000; opacity: 0.5;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
             <?php else : ?>
-                <a-plane id="<?php echo $gblist[$i]["id"] ?>" material="color: #696969; opacity: 0.65;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
+                <a-plane id="<?php echo $gblist[$i]["id"] ?>" material="color: #000; opacity: 0.5;" position="<?php echo $gblist[$i]["x"] . " -1.6 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>" scale="0.36 0.65 1"></a-plane>
             <?php endif; ?>
 
             <a-entity text="value: <?php echo $gblist[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__id" scale="1 1 1" position="<?php echo $gblist[$i]["x"] . " -1.33 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
-            <a-entity text="value: 0/100 kWt; color: #ffffff; align: center;" id="t<?php echo $c ?>__genpow" scale="0.85 0.85 0.85" position="<?php echo $gblist[$i]["x"] . " -1.42 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
+            <a-entity text="value: 0/100 kWt; color: #ffffff; align: center;" id="t<?php echo $c ?>__genpow" scale="0.85 0.85 0.85" position="<?php echo $gblist[$i]["x"] . " -1.41 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
             <a-entity text="value: 0/100 kWt; color: #ffffff; align: center;" id="t<?php echo $c ?>__reqpower" scale="0.85 0.85 0.85" position="<?php echo $gblist[$i]["x"] . " -1.48 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
 
             <?php if ($gblist[$i]["needactive"]) : ?>
@@ -54,7 +54,7 @@
                 <a-entity text="value: Active; color: #E5E5E5; align: center;" id="tconst__ison" scale="0.85 0.85 0.85" position="<?php echo $gblist[$i]["x"] . " -1.54 " . $gblist[$i]["z"] ?>" rotation="<?php echo "0 " . ((int) $gblist[$i]["rotation"] - 20) . " 0" ?>"></a-entity>
             <?php endif; ?>
 
-            <a-image src="/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.76 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 0.8" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
+            <a-image src="/img/active.jpg" width="3" height="3" scale="0.12 0.12 0.12" position="<?php echo $gblist[$i]["picture"]["position"]["x"] . " -1.76 " . $gblist[$i]["picture"]["position"]["z"] ?>" material="opacity: 1" rotation="<?php echo "0 " . ((int) $gblist[$i]["picture"]["rotation"] - 20) . " 0" ?>" id="im<?php echo $c ?>"></a-image>
 
             <?php $c += 1 ?>
         <?php endfor; ?>
