@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Daniil Dybka">
-    <title>Login</title>
+    <title>Registration at smart city prototype</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 
@@ -102,18 +103,18 @@
 <body class="text-center">
 
     <main class="form-signin w-100 m-auto">
-        <form>
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        <h1>Прототип умного города</h1>
+        <p class="mb-3" style="font-size: 20px">Регистрация</p>
+        <form action="/me/php/m/reg--check-1.php" method="post">
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <input type="email" name="email" class="form-control" placeholder="name@example.com">
+                <label>Почтовый адрес</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" name="passw" class="form-control" placeholder="Пароль">
+                <label>Пароль</label>
             </div>
-
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Далее</button>
         </form>
     </main>
 
