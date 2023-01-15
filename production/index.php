@@ -51,9 +51,9 @@
         <a-entity id="Винт Мини Ветрогенератора" scale="0.12 0.12 0.12" position="12.483 -1.207 1.985" gltf-model="/models/windMiniTurbinePropeller.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1000; easing: linear;"></a-entity>
 
         <a-plane id="Плейн Подстанция [1]" onClick="clickOnName()" material="color: #000; opacity: 0.5;" position="-3.322 -1.6 -1.048" rotation="0 90 0" scale="0.72 0.63 1"></a-plane>
-        <a-entity text="value: Substation; color: #ffffff; align: left;" id="t0__id" scale="1 1 1" position="-3.321 -1.356 -1.23" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Substation; color: #ffffff; align: left;" id="t0__genpow" scale="1 1 1" position="-3.321 -1.44 -1.23" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Active; color: #E5E5E5; align: left;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.52 -1.23" rotation="0 90 0"></a-entity>
+        <a-entity text="font: https://cdn.aframe.io/fonts/Exo2Bold.fnt; value: Substation; color: #ffffff; align: left;" id="t0__id" scale="1 1 1" position="-3.321 -1.356 -1.23" rotation="0 90 0"></a-entity>
+        <a-entity text="font: https://cdn.aframe.io/fonts/Aileron-Semibold.fnt; value: Substation; color: #ffffff; align: left;" id="t0__genpow" scale="1 1 1" position="-3.321 -1.44 -1.23" rotation="0 90 0"></a-entity>
+        <a-entity text="font: https://cdn.aframe.io/fonts/Aileron-Semibold.fnt; value: Active; color: #E5E5E5; align: left;" id="tconst__ison" scale="1 1 1" position="-3.321 -1.52 -1.23" rotation="0 90 0"></a-entity>
 
         <a-image src="/img/substation1.jpg" width="6" height="3" scale="0.12 0.12 0.12" position="-3.321 -1.76 -1.047" material="opacity: 1" rotation="0 90 0"></a-image>
         <a-image src="/img/substation1.jpg" onClick="readFile()" width="5.33" height="3" scale="0.32 0.32 0.32" position="-3.172 -1.463 1.791" material="opacity: 1" rotation="0 -45 0" id="cameraview"></a-image>

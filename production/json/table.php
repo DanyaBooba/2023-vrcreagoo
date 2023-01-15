@@ -39,6 +39,7 @@ $jsonfile = file_get_contents("index.txt");
 $array = json_decode($jsonfile);
 ?>
 
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>

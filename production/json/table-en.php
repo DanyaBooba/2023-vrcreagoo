@@ -39,6 +39,7 @@ $jsonfile = file_get_contents("index.txt");
 $array = json_decode($jsonfile);
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -79,7 +80,7 @@ $array = json_decode($jsonfile);
 
     <div class="bg-light py-3">
         <div class="container">
-            <a href="/json/table-en.php">Table at russian</a>
+            <a href="/json/table.php">Table at russian</a>
         </div>
     </div>
 
