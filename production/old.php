@@ -1,161 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html land="en">
 
 <head>
-    <title>Meteoenergetick</title>
-    <meta charset="utf-8" />
+    <title>WebVR part 1</title>
     <meta aframe-injected="" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no,user-scalable=no,minimal-ui,viewport-fit=cover">
     <meta aframe-injected="" name="mobile-web-app-capable" content="yes">
     <meta aframe-injected="" name="theme-color" content="black">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.3/signalr.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@d893cfacc335696c7183943eab8165100c3a6e1c/dist/aframe-master.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+
+    <!-- <script src="https://unpkg.com/@editvr/aframe-dialog-popup-component@1.7.2/dist/aframe-dialog-popup-component.min.js"></script> -->
+    <!-- <script src="components/vr-move.js"></script> -->
+    <!-- <script type="text/javascript" src="data/exdata.json"></script> -->
+    <!-- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> -->
+    <!-- <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/aframe-svg-extruder@1.0.0/dist/index.min.js"></script> -->
 </head>
 
-<?php
-
-$array1 = [
-    [
-        "id" => "Solar Battery",
-        "x" => "-18.28",
-        "z" => "11.38",
-        "rotation" => "180",
-    ],
-    [
-        "id" => "Mini Substation 1",
-        "x" => "-19.83",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Mini Substation 2",
-        "x" => "-6.70",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Hospital 2",
-        "x" => "-8.78",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Factory 2",
-        "x" => "4.035",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "22.65",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "29.15",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "36.48",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "20.44",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "27.63",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Microdistrict",
-        "x" => "34.63",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Factory 1",
-        "x" => "46.89",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Hospital 1",
-        "x" => "68.28",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-    [
-        "id" => "Solar Battery",
-        "x" => "71.89",
-        "z" => "-13.93",
-        "rotation" => "0"
-    ],
-    [
-        "id" => "Wind Generator",
-        "x" => "75.19",
-        "z" => "11.38",
-        "rotation" => "180"
-    ],
-];
-
-?>
-
 <body>
+    <a-scene room-manager="nav: true; startPos: 0 0 -40">
 
-    <a-scene room-manager="nav: true; startPos: 0 0 -40" fog="type: linear; color: #aaa">
+        <!-- Models -->
+        <a-entity id="Дорога" position="-12 0 45" gltf-model="models__1/road.glb" depth-correction></a-entity>
+        <a-entity id="Заводы" position="-12 0 45" gltf-model="models__1/factory.glb" depth-correction></a-entity>
+        <a-entity id="Генераторы" position="-12 0 45" gltf-model="models__1/generators.glb" depth-correction>
+        </a-entity>
+        <a-entity id="Дома" position="-12 0 45" gltf-model="models__1/home.glb" depth-correction></a-entity>
+        <a-entity id="Больница" position="-12 0 45" gltf-model="models__1/hospital.glb" depth-correction></a-entity>
+        <a-entity id="Фонари" position="-12 0 45" gltf-model="models__1/lanterns.glb" depth-correction></a-entity>
+        <a-entity id="Декор" position="-12 0 45" gltf-model="models__1/scenery.glb" depth-correction></a-entity>
+        <a-entity id="Станция" position="-12 0 45" gltf-model="models__1/station.glb" depth-correction></a-entity>
+        <a-entity id="Подстанции" position="-12 0 45" gltf-model="models__1/substation.glb" depth-correction>
+        </a-entity>
+        <a-entity id="Провода" position="-12 0 45" gltf-model="models__1/wires.glb" depth-correction></a-entity>
 
-        <a-entity id="Стенд" position="0 -2 0" gltf-model="/models/stand.glb"></a-entity>
-        <a-entity id="Винт Ветрогенератора 1" position="-52.95 16.88 24.95" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -360 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
-        <a-entity id="Винт Ветрогенератора 2" position="-52.95 16.88 0" rotation="-90 0 0" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -450 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
-        <a-entity id="Винт Ветрогенератора 3" position="-52.95 16.88 -25" rotation="-180 0 0" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -540 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
-        <a-entity id="Винт Мини Ветрогенератора" position="77.77 4.55 16.47" gltf-model="/models/windMiniTurbinePropeller.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1000; easing: linear;"></a-entity>
+        <!-- Custom -->
 
-        <a-plane id="Плейн Подстанция [1]" material="color: #696969; opacity: 0.4;" position="-27.98 0.5 -6.15" rotation="0 90 0" scale="2.5 3 1"></a-plane>
-        <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__id" scale="7 7 1" position="-27.9 1 -6.15" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__genpow" scale="7 7 1" position="-27.9 0.5 -6.15" rotation="0 90 0"></a-entity>
-        <a-entity text="value: Substation; color: #ffffff; align: center;" id="t0__ison" scale="7 7 1" position="-27.9 0 -6.15" rotation="0 90 0"></a-entity>
+        <!-- Aero -->
+        <a-entity id="Аэро Станция 1" position="-11.629 0 56.38" gltf-model="models__1/aero.glb" depth-correction>
+        </a-entity>
+        <a-entity id="Аэро Станция 2" position="-12 0 45" gltf-model="models__1/aero.glb" depth-correction></a-entity>
+        <a-entity id="Аэро Станция 3" position="-9.75 0 34.24" gltf-model="models__1/aero.glb" depth-correction>
+        </a-entity>
 
-        <?php $c = 1 ?>
-        <?php for ($i = 0; $i < count($array1); $i++) : ?>
+        <a-entity id="Аэро Крутилка 1" position="-87.4 16.872 61.43" rotation="180 0 0" gltf-model="models__1/aero_roll.glb" animation="property: rotation; to: -180 0 0; loop: true; dur: 2060" depth-correction></a-entity>
+        <a-entity id="Аэро Крутилка 2" position="-87.4 16.87 50.08" rotation="180 0 0" gltf-model="models__1/aero_roll.glb" animation="property: rotation; to: -180 0 0; loop: true; dur: 2060" depth-correction></a-entity>
+        <a-entity id="Аэро Крутилка 3" position="-85.45 16.87 39.2" rotation="180 0 0" gltf-model="models__1/aero_roll.glb" animation="property: rotation; to: -180 0 0; loop: true; dur: 2060" depth-correction></a-entity>
+        <!-- /Aero -->
 
-            <a-plane id="<?php echo $array1[$i]["id"] ?>" material="color: #696969; opacity: 0.4;" position="<?php echo $array1[$i]["x"] . " 0.5 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>" scale="2.5 3 1"></a-plane>
+        <!-- Cars -->
+        <a-entity id="Полицейская Машина" position="-9.75 0 47" gltf-model="models__1/car__cop.glb" depth-correction>
+        </a-entity>
+        <a-entity id="Машина" position="-21.45 0 42.28" gltf-model="models__1/car__default.glb" depth-correction>
+        </a-entity>
+        <!-- /Cars -->
 
-            <a-entity text="value: <?php echo $array1[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__id" scale="7 7 1" position="<?php echo $array1[$i]["x"] . " 1.5 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $array1[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__genpow" scale="7 7 1" position="<?php echo $array1[$i]["x"] . " 1 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $array1[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__power" scale="7 7 1" position="<?php echo $array1[$i]["x"] . " 0.5 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $array1[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__reqpower" scale="7 7 1" position="<?php echo $array1[$i]["x"] . " 0 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>"></a-entity>
-            <a-entity text="value: <?php echo $array1[$i]["id"] ?>; color: #ffffff; align: center;" id="t<?php echo $c ?>__ison" scale="7 7 1" position="<?php echo $array1[$i]["x"] . " -0.5 " . $array1[$i]["z"] ?>" rotation="<?php echo "0 " . $array1[$i]["rotation"] . " 0" ?>"></a-entity>
+        <!-- Mini Aero -->
+        <a-entity id="Мини Аэро Станция" position="-14.841 0 45" gltf-model="models__1/mini__aero.glb" depth-correction></a-entity>
+        <a-entity id="Мини Аэро Крутилка" position="38.23 6.24 60.57" rotation="0 0 0" gltf-model="models__1/mini__aero_roll.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1000" depth-correction></a-entity>
+        <!-- /Mini Aero -->
 
-            <?php $c += 1 ?>
-        <?php endfor; ?>
+        <!-- /Custom -->
 
+        <!-- /Models -->
 
-        <a-sky src="/img/sky.jpg" rotation="0 -130 0"></a-sky>
+        <a-sky src="sky.jpg" rotation="0 -130 0"></a-sky>
 
-        <!-- Camera -->
+        <!-- CAMERA -->
         <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true; enabled: true">
-            <a-entity id="cursor" camera look-controls position="0 0.8 0" rotation="0 180 0" cursor="rayOrigin: mouse" raycaster="objects: .interractible">
+            <a-entity id="cursor" camera look-controls position="0 2.7 54" rotation="0 180 0" cursor="rayOrigin: mouse" raycaster="objects: .interractible">
             </a-entity>
             <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: highPoly; color: #94c6ff"></a-entity>
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: highPoly; color: #94c6ff" laser-controls line="color: red; opacity: 0.75" raycaster="objects: .interractible"></a-entity>
+
             <a-entity id="choseHand"></a-entity>
         </a-entity>
-        <!-- /Camera -->
+
 
     </a-scene>
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/index@old.js"></script>
+    <!--
+    <script src="components/change-region.js"></script>
+    <script src="components/teleport.js"></script>
+    <script src="components/room-manager.js"></script>
+    <script src="components/video-player.js"></script>
+    <script src="components/video-player-hls.js"></script>
+    <script src="components/aframe-video-controls.js"></script>
+    <script src="components/excursion-controller.js"></script>
+    <script src="components/setup-fade.js"></script>
+    <script src="components/camera-look.js"></script>
+    <script src="components/print-panel.js"></script>
+    <script src="components/agro-controller.js"></script>
+    <script src="components/signal-controller.js"></script>
+    <script src="components/aframe-dialog-popup-component.js"></script>
+    -->
 </body>
 
 </html>
