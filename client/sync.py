@@ -28,14 +28,18 @@ def sync():
     finishlist = {
         'info': {
             'elements': jsonf['ElementsOK'],
+            'generatedpower': format(jsonf['RootNode']['GeneratedPower']),
+            'requiredpower': format(jsonf['RootNode']['RequiredPower']),
             'lamp1': format(jsonf['Lamp1val']),
             'lamp2': format(jsonf['Lamp2val']),
             'tree': format(jsonf['TreeOK']),
-            'wind': format(jsonf['Windval'])
+            'wind': format(jsonf['Windval']),
         },
         'lines': {
-            'generatedpower': format(jsonf['RootNode']['GeneratedPower']),
-            'requiredpower': format(jsonf['RootNode']['RequiredPower']),
+
+        },
+        'stations': {
+
         }
     }
 
