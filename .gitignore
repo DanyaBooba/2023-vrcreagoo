@@ -1,2 +1,4 @@
 .DS_Store
 node_modules
+client/localjsonfile.txt
+__pycache__
