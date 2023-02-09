@@ -16,10 +16,30 @@ def getjson():
     return text
 
 
+def format(val):
+    if (val == None):
+        return "0"
+    return round(val)
+
+
 def sync():
     jsonfile = getjson()
     jsonf = json.loads(jsonfile)
-    print(type(jsonf))
+    finishlist = {
+        'info': {
+            'elements': jsonf['ElementsOK'],
+            'lamp1': format(jsonf['Lamp1val']),
+            'lamp2': format(jsonf['Lamp2val']),
+            'tree': format(jsonf['TreeOK']),
+            'wind': format(jsonf['Windval'])
+        },
+        'lines': {
+            'generatedpower': format(jsonf['RootNode']['GeneratedPower']),
+            'requiredpower': format(jsonf['RootNode']['RequiredPower']),
+        }
+    }
+
+    print(finishlist)
 
 
 while True:
