@@ -32,9 +32,19 @@ k1 = j_[0].copy()
 k2 = j_[1].copy()
 k3 = j_[2].copy()
 
-i1 = len(k1['Childs'])
-print(getbuild(k1))
+parsed[0] = getbuild(k1)
+parsed[1] = getbuild(k1['Childs'][0])
+parsed[2] = getbuild(k1['Childs'][0]['Childs'][0])
+parsed[4] = getbuild(k1['Childs'][0]['Childs'][1])
+parsed[5] = getbuild(k1['Childs'][0]['Childs'][0]['Childs'][0])
+parsed[6] = getbuild(k1['Childs'][0]['Childs'][1]['Childs'][0])
+parsed[7] = getbuild(k1['Childs'][0]['Childs'][1]['Childs'][1])
 
-# print(k1)
+print(str(parsed))
+
+# file = open("itog.txt", "w", encoding='utf-8')
+# file.write(str(parsed))
+# file.close()
+
 # print(k2)
 # print(k3)
