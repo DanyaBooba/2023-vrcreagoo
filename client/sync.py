@@ -32,6 +32,19 @@ def return_lines(j_):
     return j_lines
 
 
+def getbuild(val):
+    returnarray = {
+        "generatedpower": format(val['GeneratedPower']),
+        "id": val['ID'],
+        "active": val['IsON'],
+        "type": val['ObjectType'],
+        "power": val['Power'],
+        "requiredpower": val['RequiredPower'],
+    }
+
+    return returnarray
+
+
 def return_stations(j_):
     j_stations = j_['RootNode']['Stations']
     count = 0
