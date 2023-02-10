@@ -22,9 +22,54 @@ def format(val):
     return round(val)
 
 
+finishlist = {}
+
+
+def return_lines(j_):
+    j_lines = j_['RootNode']['Lines']
+    k = j_lines
+    count = 0
+    returndict = {}
+
+    for i in range(len(k)):
+        if k != None:
+            returndict[count] = {
+                "generatedpower": k['GeneratedPower'],
+                "id": k['ID'],
+                "active": k['IsON'],
+                "type": k['ObjectType'],
+                "power": k['Power'],
+                "requiredpower": k['RequiredPower']
+            }
+
+    print(returndict)
+
+    return returndict
+
+
+def return_stations(j_):
+    j_stations = j_['RootNode']['Stations']
+    count = 0
+    returndict = {}
+    for i in j_stations:
+        if i != None:
+            returndict[count] = {
+                "generatedpower": format(i['GeneratedPower']),
+                "id": i['ID'],
+                "active": i['IsON'],
+                "type": i['ObjectType'],
+                "power": i['Power'],
+                "requiredpower": i['RequiredPower'],
+            }
+            count += 1
+
+    # return returndict
+
+
 def sync():
     jsonfile = getjson()
     jsonf = json.loads(jsonfile)
+
     finishlist = {
         'info': {
             'elements': jsonf['ElementsOK'],
@@ -35,15 +80,11 @@ def sync():
             'tree': format(jsonf['TreeOK']),
             'wind': format(jsonf['Windval']),
         },
-        'lines': {
-
-        },
-        'stations': {
-
-        }
+        'lines': return_lines(jsonf),
+        'stations': return_stations(jsonf)
     }
 
-    print(finishlist)
+    # print(finishlist)
 
 
 while True:
