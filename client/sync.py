@@ -22,16 +22,6 @@ def format(val):
     return round(val)
 
 
-finishlist = {}
-
-
-def return_lines(j_):
-    j_lines = j_['RootNode']['Lines']
-    print(j_lines)
-
-    return j_lines
-
-
 def getbuild(val):
     returnarray = {
         "generatedpower": format(val['GeneratedPower']),
@@ -43,6 +33,41 @@ def getbuild(val):
     }
 
     return returnarray
+
+
+finishlist = {}
+
+
+def return_lines(j_):
+    j_lines = j_['RootNode']['Lines']
+    getfinal = {}
+
+    getfinal[0] = getbuild(j_lines[0])
+    getfinal[1] = getbuild(j_lines[0]['Childs'][0])
+    getfinal[2] = getbuild(j_lines[0]['Childs'][0]['Childs'][0])
+    getfinal[3] = getbuild(j_lines[0]['Childs'][0]['Childs'][1])
+    getfinal[4] = getbuild(j_lines[0]['Childs'][0]['Childs'][0]['Childs'][0])
+    getfinal[5] = getbuild(j_lines[0]['Childs'][0]['Childs'][1]['Childs'][0])
+    getfinal[6] = getbuild(j_lines[0]['Childs'][0]['Childs'][1]['Childs'][1])
+
+    getfinal[7] = getbuild(j_lines[1])
+    getfinal[8] = getbuild(j_lines[1]['Childs'][0])
+    getfinal[9] = getbuild(j_lines[1]['Childs'][1])
+    getfinal[10] = getbuild(j_lines[1]['Childs'][2])
+    getfinal[11] = getbuild(j_lines[1]['Childs'][3])
+    getfinal[12] = getbuild(j_lines[1]['Childs'][4])
+    getfinal[13] = getbuild(j_lines[1]['Childs'][5])
+    getfinal[14] = getbuild(j_lines[1]['Childs'][6])
+
+    getfinal[15] = getbuild(j_lines[2])
+    getfinal[16] = getbuild(j_lines[2]['Childs'][0])
+    getfinal[17] = getbuild(j_lines[2]['Childs'][0]['Childs'][0])
+    getfinal[18] = getbuild(j_lines[2]['Childs'][0]['Childs'][1])
+    getfinal[19] = getbuild(j_lines[2]['Childs'][0]['Childs'][0]['Childs'][0])
+    getfinal[20] = getbuild(j_lines[2]['Childs'][0]['Childs'][1]['Childs'][0])
+    getfinal[21] = getbuild(j_lines[2]['Childs'][0]['Childs'][1]['Childs'][1])
+
+    return getfinal
 
 
 def return_stations(j_):
@@ -61,7 +86,7 @@ def return_stations(j_):
             }
             count += 1
 
-    # return returndict
+    return returndict
 
 
 def sync():
@@ -82,7 +107,7 @@ def sync():
         'stations': return_stations(jsonf)
     }
 
-    # print(finishlist)
+    print(finishlist)
 
 
 while True:

@@ -1,67 +1,58 @@
-import json
+# import json
 
 
-def format(val):
-    if (val == None):
-        return "0"
-    return round(val)
+# def format(val):
+#     if (val == None):
+#         return "0"
+#     return round(val)
 
 
-def getjson():
-    with open('localjson_lines.txt', 'r', encoding='utf-8') as f:
-        text = f.read()
-    return text
+# def getjson():
+#     with open('localjson_lines.txt', 'r', encoding='utf-8') as f:
+#         text = f.read()
+#     return text
 
 
-def getbuild(val):
-    returnarray = {
-        "generatedpower": format(val['GeneratedPower']),
-        "id": val['ID'],
-        "active": val['IsON'],
-        "type": val['ObjectType'],
-        "power": val['Power'],
-        "requiredpower": val['RequiredPower'],
-    }
+# def getbuild(val):
+#     returnarray = {
+#         "generatedpower": format(val['GeneratedPower']),
+#         "id": val['ID'],
+#         "active": val['IsON'],
+#         "type": val['ObjectType'],
+#         "power": val['Power'],
+#         "requiredpower": val['RequiredPower'],
+#     }
 
-    return returnarray
+#     return returnarray
 
 
-parsed = {}
-j_ = json.loads(getjson())
-k1 = j_[0].copy()
-k2 = j_[1].copy()
-k3 = j_[2].copy()
+getfinal = {}
+j_lines = json.loads(getjson())
+k1 = j_lines[0].copy()
+k2 = j_lines[1].copy()
+k3 = j_lines[2].copy()
 
-parsed[0] = getbuild(j_[0])
-parsed[1] = getbuild(j_[0]['Childs'][0])
-parsed[2] = getbuild(j_[0]['Childs'][0]['Childs'][0])
-parsed[3] = getbuild(j_[0]['Childs'][0]['Childs'][1])
-parsed[4] = getbuild(j_[0]['Childs'][0]['Childs'][0]['Childs'][0])
-parsed[5] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][0])
-parsed[6] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][1])
+getfinal[0] = getbuild(j_lines[0])
+getfinal[1] = getbuild(j_lines[0]['Childs'][0])
+getfinal[2] = getbuild(j_lines[0]['Childs'][0]['Childs'][0])
+getfinal[3] = getbuild(j_lines[0]['Childs'][0]['Childs'][1])
+getfinal[4] = getbuild(j_lines[0]['Childs'][0]['Childs'][0]['Childs'][0])
+getfinal[5] = getbuild(j_lines[0]['Childs'][0]['Childs'][1]['Childs'][0])
+getfinal[6] = getbuild(j_lines[0]['Childs'][0]['Childs'][1]['Childs'][1])
 
-parsed[7] = getbuild(j_[1])
-parsed[8] = getbuild(j_[1]['Childs'][0])
-parsed[9] = getbuild(j_[1]['Childs'][1])
-parsed[10] = getbuild(j_[1]['Childs'][2])
-parsed[11] = getbuild(j_[1]['Childs'][3])
-parsed[12] = getbuild(j_[1]['Childs'][4])
-parsed[13] = getbuild(j_[1]['Childs'][5])
-parsed[14] = getbuild(j_[1]['Childs'][6])
+getfinal[7] = getbuild(j_lines[1])
+getfinal[8] = getbuild(j_lines[1]['Childs'][0])
+getfinal[9] = getbuild(j_lines[1]['Childs'][1])
+getfinal[10] = getbuild(j_lines[1]['Childs'][2])
+getfinal[11] = getbuild(j_lines[1]['Childs'][3])
+getfinal[12] = getbuild(j_lines[1]['Childs'][4])
+getfinal[13] = getbuild(j_lines[1]['Childs'][5])
+getfinal[14] = getbuild(j_lines[1]['Childs'][6])
 
-parsed[15] = getbuild(j_[2])
-parsed[16] = getbuild(j_[2]['Childs'][0])
-parsed[17] = getbuild(j_[2]['Childs'][0]['Childs'][0])
-parsed[18] = getbuild(j_[2]['Childs'][0]['Childs'][1])
-parsed[19] = getbuild(j_[2]['Childs'][0]['Childs'][0]['Childs'][0])
-parsed[20] = getbuild(j_[2]['Childs'][0]['Childs'][1]['Childs'][0])
-parsed[21] = getbuild(j_[2]['Childs'][0]['Childs'][1]['Childs'][1])
-
-print(parsed)
-
-# file = open("itog.txt", "w", encoding='utf-8')
-# file.write(str(parsed))
-# file.close()
-
-# print(k2)
-# print(k3)
+getfinal[15] = getbuild(j_lines[2])
+getfinal[16] = getbuild(j_lines[2]['Childs'][0])
+getfinal[17] = getbuild(j_lines[2]['Childs'][0]['Childs'][0])
+getfinal[18] = getbuild(j_lines[2]['Childs'][0]['Childs'][1])
+getfinal[19] = getbuild(j_lines[2]['Childs'][0]['Childs'][0]['Childs'][0])
+getfinal[20] = getbuild(j_lines[2]['Childs'][0]['Childs'][1]['Childs'][0])
+getfinal[21] = getbuild(j_lines[2]['Childs'][0]['Childs'][1]['Childs'][1])
