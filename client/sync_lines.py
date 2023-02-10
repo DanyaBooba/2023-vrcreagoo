@@ -26,29 +26,36 @@ def getbuild(val):
     return returnarray
 
 
-# parsed[0] = getbuild(j_[0])
-# parsed[1] = getbuild(j_[0]['Childs'][0])
-# parsed[2] = getbuild(j_[0]['Childs'][0]['Childs'][0])
-# parsed[3] = getbuild(j_[0]['Childs'][0]['Childs'][1])
-# parsed[4] = getbuild(j_[0]['Childs'][0]['Childs'][0]['Childs'][0])
-# parsed[5] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][0])
-# parsed[6] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][1])
-
-# parsed[7] = getbuild(j_[1])
-# parsed[8] = getbuild(j_[1]['Childs'][0])
-# parsed[9] = getbuild(j_[1]['Childs'][1])
-# parsed[10] = getbuild(j_[1]['Childs'][2])
-# parsed[11] = getbuild(j_[1]['Childs'][3])
-# parsed[12] = getbuild(j_[1]['Childs'][4])
-# parsed[13] = getbuild(j_[1]['Childs'][5])
-# parsed[14] = getbuild(j_[1]['Childs'][6])
-
 parsed = {}
 j_ = json.loads(getjson())
 k1 = j_[0].copy()
 k2 = j_[1].copy()
 k3 = j_[2].copy()
 
+parsed[0] = getbuild(j_[0])
+parsed[1] = getbuild(j_[0]['Childs'][0])
+parsed[2] = getbuild(j_[0]['Childs'][0]['Childs'][0])
+parsed[3] = getbuild(j_[0]['Childs'][0]['Childs'][1])
+parsed[4] = getbuild(j_[0]['Childs'][0]['Childs'][0]['Childs'][0])
+parsed[5] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][0])
+parsed[6] = getbuild(j_[0]['Childs'][0]['Childs'][1]['Childs'][1])
+
+parsed[7] = getbuild(j_[1])
+parsed[8] = getbuild(j_[1]['Childs'][0])
+parsed[9] = getbuild(j_[1]['Childs'][1])
+parsed[10] = getbuild(j_[1]['Childs'][2])
+parsed[11] = getbuild(j_[1]['Childs'][3])
+parsed[12] = getbuild(j_[1]['Childs'][4])
+parsed[13] = getbuild(j_[1]['Childs'][5])
+parsed[14] = getbuild(j_[1]['Childs'][6])
+
+parsed[15] = getbuild(j_[2])
+parsed[16] = getbuild(j_[2]['Childs'][0])
+parsed[17] = getbuild(j_[2]['Childs'][0]['Childs'][0])
+parsed[18] = getbuild(j_[2]['Childs'][0]['Childs'][1])
+parsed[19] = getbuild(j_[2]['Childs'][0]['Childs'][0]['Childs'][0])
+parsed[20] = getbuild(j_[2]['Childs'][0]['Childs'][1]['Childs'][0])
+parsed[21] = getbuild(j_[2]['Childs'][0]['Childs'][1]['Childs'][1])
 
 print(parsed)
 
