@@ -22,20 +22,41 @@ def format(val):
     return round(val)
 
 
+# additional substation
+def id(val):
+    if val == "Завод №1":
+        return "Factory No.1"
+    elif val == "Завод №2":
+        return "Factory No.2"
+    elif val == "Больница №1":
+        return "Hospital No.1"
+    elif val == "Больница №2":
+        return "Hospital No.2"
+    elif val == "Микро район №1":
+        return "Housing No.1"
+    elif val == "Микро район №2":
+        return "Housing No.2"
+    elif val == "Микро район №3":
+        return "Housing No.3"
+    elif val == "Микро район №4":
+        return "Housing No.4"
+    elif val == "Микро район №5":
+        return "Housing No.5"
+    elif val == "Микро район №6":
+        return "Housing No.6"
+
+
 def getbuild(val):
     returnarray = {
         "generatedpower": format(val['GeneratedPower']),
         "id": val['ID'],
         "active": val['IsON'],
         "type": val['ObjectType'],
-        "power": val['Power'],
-        "requiredpower": val['RequiredPower'],
+        "power": format(val['Power']),
+        "requiredpower": format(val['RequiredPower']),
     }
 
     return returnarray
-
-
-finishlist = {}
 
 
 def return_lines(j_):
@@ -76,14 +97,7 @@ def return_stations(j_):
     returndict = {}
     for i in j_stations:
         if i != None:
-            returndict[count] = {
-                "generatedpower": format(i['GeneratedPower']),
-                "id": i['ID'],
-                "active": i['IsON'],
-                "type": i['ObjectType'],
-                "power": i['Power'],
-                "requiredpower": i['RequiredPower'],
-            }
+            returndict[count] = getbuild(i)
             count += 1
 
     return returndict
@@ -108,8 +122,13 @@ def sync():
     }
 
     print(finishlist)
+    file = open("itog.txt", "w", encoding='utf-8')
+    file.write(str(finishlist))
+    file.close()
 
 
-while True:
-    sync()
-    time.sleep(timesleep)
+sync()
+
+# while True:
+#     sync()
+#     time.sleep(timesleep)
