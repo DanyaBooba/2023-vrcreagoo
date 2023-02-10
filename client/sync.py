@@ -27,34 +27,9 @@ finishlist = {}
 
 def return_lines(j_):
     j_lines = j_['RootNode']['Lines']
-    k1 = j_lines.copy()
-    k1.pop(1)
-    k1.pop(1)
-    # k2 = j_lines[1].copy()
-    # k3 = j_lines[2].copy()
-    count = 0
-    returndict = {}
+    print(j_lines)
 
-    # print(k1[0]['Childs'][0])
-
-    # k = k1
-    # while k != None:
-    #     for i in range(len(k)):
-    #         returndict[count] = {
-    #             "generatedpower": k[i]['GeneratedPower'],
-    #             "id": k[i]['ID'],
-    #             "active": k[i]['IsON'],
-    #             "type": k[i]['ObjectType'],
-    #             "power": k[i]['Power'],
-    #             "requiredpower": k[i]['RequiredPower']
-    #         }
-    #         print(i)
-    #         count += 1
-    #     k = k['Childs']
-
-    # print(returndict)
-
-    return returndict
+    return j_lines
 
 
 def return_stations(j_):
