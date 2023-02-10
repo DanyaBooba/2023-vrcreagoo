@@ -27,22 +27,32 @@ finishlist = {}
 
 def return_lines(j_):
     j_lines = j_['RootNode']['Lines']
-    k = j_lines
+    k1 = j_lines.copy()
+    k1.pop(1)
+    k1.pop(1)
+    # k2 = j_lines[1].copy()
+    # k3 = j_lines[2].copy()
     count = 0
     returndict = {}
 
-    for i in range(len(k)):
-        if k != None:
-            returndict[count] = {
-                "generatedpower": k['GeneratedPower'],
-                "id": k['ID'],
-                "active": k['IsON'],
-                "type": k['ObjectType'],
-                "power": k['Power'],
-                "requiredpower": k['RequiredPower']
-            }
+    # print(k1[0]['Childs'][0])
 
-    print(returndict)
+    # k = k1
+    # while k != None:
+    #     for i in range(len(k)):
+    #         returndict[count] = {
+    #             "generatedpower": k[i]['GeneratedPower'],
+    #             "id": k[i]['ID'],
+    #             "active": k[i]['IsON'],
+    #             "type": k[i]['ObjectType'],
+    #             "power": k[i]['Power'],
+    #             "requiredpower": k[i]['RequiredPower']
+    #         }
+    #         print(i)
+    #         count += 1
+    #     k = k['Childs']
+
+    # print(returndict)
 
     return returndict
 
