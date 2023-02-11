@@ -1,3 +1,6 @@
+from formatdate import *
+
+
 def getjson():
     with open('files/localjson.txt', 'r', encoding='utf-8') as f:  # local
         text = f.read()
@@ -11,14 +14,6 @@ def logs(val, isdebug=False):
     else:
         with open('logs_debug/logs.txt', 'a') as f:
             f.write(val+"\n")
-
-
-def datetimeformat(dt, isdebug=False):
-    if isdebug == True:
-        return str(dt.day) + "_" + str(dt.month) + "_" + \
-            str(dt.year) + " " + str(dt.hour) + "_" + str(dt.minute)
-    return str(dt.day) + "." + str(dt.month) + "." + \
-        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute)
 
 
 def format(val):

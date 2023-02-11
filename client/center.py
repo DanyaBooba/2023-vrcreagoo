@@ -7,8 +7,16 @@
 import c
 import time
 import requests
+from datetime import datetime
+from formatdate import *
 
-import random
+timesleep = 1.25
+
+url = {
+    "get": "https://vr.creagoo.ru/stats/return.php",
+    "set": "https://vr.creagoo.ru/stats/set.php",
+    "energo": "http://" + c.IP_ENERGO + ":8004/JSONGreenCity/"
+}
 
 changename = {
     "hospital_1": "Больница №1",
@@ -28,19 +36,39 @@ changename = {
 
 
 def changestate(build):
-    print(build['name'], build['state'])
+    # requests.get(changestateturn('TurnOff', build['name']))
+    if (build['state'] == 1):
+        changestateturn('TurnOn', build['name'])  # local
+    elif (build['state'] == 0):
+        changestateturn('TurnOff', build['name'])  # local
+
+
+def changestateturn(turn, name):
+    return url['energo'] + turn + "?key=" +\
+        changename[name]+"&soketnum=-1"
 
 
 def getstate(buildname):
-    return random.randint(0, 1)  # local
+    ret = requests.get(url['get'], params={"b": buildname})
+    if str(ret.text) == "0" or str(ret.text) == "1":
+        return int(ret.text)
+    return None
+
+    # requests.post('https://httpbin.org/post', data = {'key':'value'})
 
 
 def center():
     for i in changename:
         changestate({
             "name": str(i),
-            "state": getstate(i),
+            "state": getstate(str(i)),
         })
 
 
-center()
+count = 1
+while True:
+    center()
+    print("[" + str(count) + "] Cycle completed (" +
+          datetimeformat(datetime.now()) + ")")
+    count += 1
+    time.sleep(timesleep)
