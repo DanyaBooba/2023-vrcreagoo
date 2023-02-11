@@ -1,9 +1,15 @@
 from formatdate import *
+import os.path
 
 
 def getjson():
-    with open('files/localjson.txt', 'r', encoding='utf-8') as f:  # local
+    path = "files/localjson0.txt"
+    if (os.path.exists(path) == False):
+        return None
+
+    with open(path, 'r', encoding='utf-8') as f:  # local
         text = f.read()
+        f.close()
     return text
 
 
@@ -11,9 +17,11 @@ def logs(val, isdebug=False):
     if isdebug == False:
         with open('logs/logs.txt', 'a') as f:
             f.write(val+"\n")
+            f.close()
     else:
         with open('logs_debug/logs.txt', 'a') as f:
             f.write(val+"\n")
+            f.close()
 
 
 def format(val):

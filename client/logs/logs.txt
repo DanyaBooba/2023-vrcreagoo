@@ -34,3 +34,15 @@
 {"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 19:1"}
 {"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 19:2"}
 {"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 19:2"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:33"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:33"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:33"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:34"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:34"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:35"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:35"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:39"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:39"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 22:40"}
+{"error": "null json", "datetime": "11.2.2023 22:41"}
+{"error": "null json", "datetime": "11.2.2023 22:41"}

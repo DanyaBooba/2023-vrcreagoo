@@ -47,6 +47,7 @@ def return_stations(j_):
     j_stations = j_['RootNode']['Stations']
     count = 0
     returndict = {}
+
     for i in j_stations:
         if i != None:
             returndict[count] = getbuild(i)
@@ -57,6 +58,15 @@ def return_stations(j_):
 
 def sync(isdebug=False):
     jsonfile = getjson()
+
+    if jsonfile == None:
+        dt_format = datetimeformat(datetime.now())
+        logs(json.dumps({
+            "error": "null json",
+            "datetime": dt_format
+        }))
+        return 0
+
     jsonf = json.loads(jsonfile)
 
     finishlist = {
@@ -100,3 +110,5 @@ def sync(isdebug=False):
             "generatedpower": 0,
             "datetime": dt_format
         }))
+
+    return 1

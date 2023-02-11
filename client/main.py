@@ -11,10 +11,13 @@ import time
 count = 1
 while True:
 
-    sync()
-    gettime = datetimeformat(datetime.now())
+    retsync = sync()
 
-    print("[" + str(count) + "] load success (" + str(gettime) + ")")
-    count += 1
+    gettime = datetimeformat(datetime.now())
+    if (retsync == 1):
+        print("[" + str(count) + "] load success (" + str(gettime) + ")")
+        count += 1
+    else:
+        print("[Program error] " + str(gettime))
 
     time.sleep(timesleep)
