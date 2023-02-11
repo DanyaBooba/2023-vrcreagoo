@@ -6,6 +6,7 @@
 
 import c
 import time
+import json
 import requests
 from datetime import datetime
 from formatdate import *
@@ -34,6 +35,8 @@ changename = {
     "substation": "П",
 }
 
+debuglist = {}
+
 
 def changestate(build):
     # requests.get(changestateturn('TurnOff', build['name']))
@@ -58,16 +61,34 @@ def getstate(buildname):
 
 
 def center():
+    count = 0
+    debuglist['info'] = {
+        "datetime": datetimeformat(datetime.now())
+    }
     for i in changename:
         changestate({
             "name": str(i),
             "state": getstate(str(i)),
         })
 
+        debuglist[count] = {
+            "name": str(i),
+            "state": getstate(str(i)),
+        }
+        count += 1
+
+
+def logs(getjson):
+    with open('logs/logs_center.txt', 'a') as f:
+        f.write(str(getjson)+"\n")
+        f.close()
+
 
 count = 1
 while True:
     center()
+    logs(json.dumps(debuglist))
+
     print("[" + str(count) + "] Cycle completed (" +
           datetimeformat(datetime.now()) + ")")
     count += 1
