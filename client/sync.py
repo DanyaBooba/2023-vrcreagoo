@@ -87,10 +87,6 @@ def sync():
         "datetime": dt_format
     }))
 
-    # file = open("itog.txt", "w", encoding='utf-8')
-    # file.write(str(finishlist))
-    # file.close()
-
 
 sync()
 
