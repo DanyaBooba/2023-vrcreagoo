@@ -9,7 +9,7 @@ url = c.IP_ENERGO
 ip = c.IP
 
 urlload = "https://vr.creagoo.ru/put/?q="
-timesleep = 1.25
+timesleep = 3
 
 
 def return_lines(j_):
@@ -76,8 +76,9 @@ def sync():
 
     dt = datetime.now()
     dt_format = str(dt.day) + "." + str(dt.month) + "." + \
-        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute) + \
-        ":" + str(dt.second)
+        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute)
+
+    print(str(dt_format) + " load success")
 
     logs(json.dumps({
         "count_lines": len(finishlist['lines']),
@@ -88,8 +89,8 @@ def sync():
     }))
 
 
-sync()
+# sync()
 
-# while True:
-#     sync()
-#     time.sleep(timesleep)
+while True:
+    sync()
+    time.sleep(timesleep)

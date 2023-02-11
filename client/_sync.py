@@ -1,5 +1,3 @@
-
-
 def getjson():
     with open('files/localjson.txt', 'r', encoding='utf-8') as f:
         text = f.read()
@@ -7,10 +5,8 @@ def getjson():
 
 
 def logs(val):
-    print(str(val))
-
-    # with open('/logs/logs.txt', 'w') as f:
-    #     f.write()
+    with open('logs/logs.txt', 'a') as f:
+        f.write(val+"\n")
 
 
 def format(val):
