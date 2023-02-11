@@ -1,5 +1,5 @@
 def getjson():
-    with open('files/localjson.txt', 'r', encoding='utf-8') as f:
+    with open('files/localjson.txt', 'r', encoding='utf-8') as f:  # local
         text = f.read()
     return text
 
