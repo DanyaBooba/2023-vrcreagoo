@@ -1,3 +1,9 @@
+# Main script of sync
+# IoT with server
+#
+# Author: Daniil Dybka
+# daniil@dybka.ru
+
 from datetime import datetime
 from sync import *
 import time
