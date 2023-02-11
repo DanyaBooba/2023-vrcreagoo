@@ -74,11 +74,7 @@ def sync():
         'stations': return_stations(jsonf)
     }
 
-    dt = datetime.now()
-    dt_format = str(dt.day) + "." + str(dt.month) + "." + \
-        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute)
-
-    print(str(dt_format) + " load success")
+    dt_format = datetimeformat(datetime.now())
 
     logs(json.dumps({
         "count_lines": len(finishlist['lines']),
@@ -87,10 +83,3 @@ def sync():
         "generatedpower": 0,
         "datetime": dt_format
     }))
-
-
-# sync()
-
-while True:
-    sync()
-    time.sleep(timesleep)

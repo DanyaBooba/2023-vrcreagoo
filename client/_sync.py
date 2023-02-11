@@ -9,6 +9,11 @@ def logs(val):
         f.write(val+"\n")
 
 
+def datetimeformat(dt):
+    return str(dt.day) + "." + str(dt.month) + "." + \
+        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute)
+
+
 def format(val):
     if (val == None):
         return "0"
