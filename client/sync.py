@@ -2,7 +2,6 @@ from datetime import datetime
 from _sync import *
 import requests
 import json
-import time
 import c
 
 url = c.IP_ENERGO
@@ -56,7 +55,7 @@ def return_stations(j_):
     return returndict
 
 
-def sync():
+def sync(isdebug=False):
     jsonfile = getjson()
     jsonf = json.loads(jsonfile)
 
@@ -74,12 +73,30 @@ def sync():
         'stations': return_stations(jsonf)
     }
 
+    formatfinishlist = json.dumps(finishlist)
     dt_format = datetimeformat(datetime.now())
 
-    logs(json.dumps({
-        "count_lines": len(finishlist['lines']),
-        "count_stations": len(finishlist['stations']),
-        "elements": finishlist['info']['elements'],
-        "generatedpower": 0,
-        "datetime": dt_format
-    }))
+    if isdebug == True:
+        with open('debugjson/format/'+datetimeformat(datetime.now(), isdebug=True), 'w') as f:
+            f.write(formatfinishlist)
+            f.close()
+
+        with open('debugjson/source/'+datetimeformat(datetime.now(), isdebug=True), 'w') as f:
+            f.write(jsonfile)
+            f.close()
+
+        logs(json.dumps({
+            "count_lines": len(finishlist['lines']),
+            "count_stations": len(finishlist['stations']),
+            "elements": finishlist['info']['elements'],
+            "generatedpower": 0,
+            "datetime": dt_format
+        }), isdebug=True)
+    else:
+        logs(json.dumps({
+            "count_lines": len(finishlist['lines']),
+            "count_stations": len(finishlist['stations']),
+            "elements": finishlist['info']['elements'],
+            "generatedpower": 0,
+            "datetime": dt_format
+        }))

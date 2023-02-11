@@ -1,0 +1,13 @@
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:51"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
+{"count_lines": 22, "count_stations": 3, "elements": true, "generatedpower": 0, "datetime": "11.2.2023 18:52"}
