@@ -1,3 +1,5 @@
+from datetime import datetime
+from _sync import *
 import requests
 import json
 import time
@@ -8,55 +10,6 @@ ip = c.IP
 
 urlload = "https://vr.creagoo.ru/put/?q="
 timesleep = 1.25
-
-
-def getjson():
-    with open('localjsonfile.txt', 'r', encoding='utf-8') as f:
-        text = f.read()
-    return text
-
-
-def format(val):
-    if (val == None):
-        return "0"
-    return round(val)
-
-
-# additional substation
-def id(val):
-    if val == "Завод №1":
-        return "Factory No.1"
-    elif val == "Завод №2":
-        return "Factory No.2"
-    elif val == "Больница №1":
-        return "Hospital No.1"
-    elif val == "Больница №2":
-        return "Hospital No.2"
-    elif val == "Микро район №1":
-        return "Housing No.1"
-    elif val == "Микро район №2":
-        return "Housing No.2"
-    elif val == "Микро район №3":
-        return "Housing No.3"
-    elif val == "Микро район №4":
-        return "Housing No.4"
-    elif val == "Микро район №5":
-        return "Housing No.5"
-    elif val == "Микро район №6":
-        return "Housing No.6"
-
-
-def getbuild(val):
-    returnarray = {
-        "generatedpower": format(val['GeneratedPower']),
-        "id": val['ID'],
-        "active": val['IsON'],
-        "type": val['ObjectType'],
-        "power": format(val['Power']),
-        "requiredpower": format(val['RequiredPower']),
-    }
-
-    return returnarray
 
 
 def return_lines(j_):
@@ -121,10 +74,22 @@ def sync():
         'stations': return_stations(jsonf)
     }
 
-    print(finishlist)
-    file = open("itog.txt", "w", encoding='utf-8')
-    file.write(str(finishlist))
-    file.close()
+    dt = datetime.now()
+    dt_format = str(dt.day) + "." + str(dt.month) + "." + \
+        str(dt.year) + " " + str(dt.hour) + ":" + str(dt.minute) + \
+        ":" + str(dt.second)
+
+    logs(json.dumps({
+        "count_lines": len(finishlist['lines']),
+        "count_stations": len(finishlist['stations']),
+        "elements": finishlist['info']['elements'],
+        "generatedpower": 0,
+        "datetime": dt_format
+    }))
+
+    # file = open("itog.txt", "w", encoding='utf-8')
+    # file.write(str(finishlist))
+    # file.close()
 
 
 sync()
