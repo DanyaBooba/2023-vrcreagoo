@@ -62,7 +62,7 @@ function ReturnData()
         [
             "needactive" => true,
             "id" => "Hospital 2",
-            "x" => "1.893",
+            "x" => "3.176",
             "z" => "-1.584",
             "rotation" => "0",
             "click" => [
@@ -73,7 +73,7 @@ function ReturnData()
                 "name" => "default",
                 "rotation" => "0",
                 "position" => [
-                    "x" => "1.892",
+                    "x" => "3.175",
                     "z" => "-1.583",
                 ],
             ],

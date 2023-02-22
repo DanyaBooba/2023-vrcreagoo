@@ -24,8 +24,10 @@
 
         <a-entity id="name" position="-3.833 -1.8 -2.570" rotation="0 30 0" scale="0.3 0.3 0.3" gltf-model="/models/name.glb"></a-entity>
 
-        <a-entity id="stands1" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/road.glb"></a-entity>
         <a-entity id="stands2" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/stand.glb"></a-entity>
+        <a-entity id="stands2" rotation="0 -1 0" animation__2=" property: rotation; to: 0 1 0; dir: alternate; dur: 4000; loop: true" animation="property: object3D.position.y; to: -1.7; dir: alternate; dur: 2000; loop: true" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/water.glb"></a-entity>
+
+        <?php include_once "php/trees.php" ?>
         <a-entity id="stands3" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bMinivetro.glb"></a-entity>
         <a-entity id="stands4" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bHospital1.glb"></a-entity>
         <a-entity id="stands5" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bHospital2.glb"></a-entity>
@@ -36,10 +38,8 @@
         <a-entity id="stands10" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bLightpan2.glb"></a-entity>
         <a-entity id="stands11" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bLightpan1.glb"></a-entity>
         <a-entity id="stands12" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/gori.glb"></a-entity>
-        <a-entity id="stands13" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/lights.glb"></a-entity>
         <a-entity id="stands14" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bSubstation.glb"></a-entity>
         <a-entity id="stands15" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bVetro.glb"></a-entity>
-        <a-entity id="stands16" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/trees.glb"></a-entity>
         <a-entity id="stands17" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bHouses1.glb"></a-entity>
         <a-entity id="stands18" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bHouses2.glb"></a-entity>
         <a-entity id="stands19" position="0 -2 0" scale="0.12 0.12 0.12" gltf-model="/models/stand/bMinisub1.glb"></a-entity>
@@ -48,7 +48,7 @@
         <a-entity id="Винт Ветрогенератора 1" scale="0.12 0.12 0.12" position="-6.345 0.265 2.993" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -360 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
         <a-entity id="Винт Ветрогенератора 2" scale="0.12 0.12 0.12" position="-6.343 0.276 0" rotation="-90 0 0" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -450 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
         <a-entity id="Винт Ветрогенератора 3" scale="0.12 0.12 0.12" position="-6.333 0.266 -3.007" rotation="-180 0 0" gltf-model="/models/windTurbinePropeller.glb" animation="property: rotation; to: -540 0 0; loop: true; dur: 3000; easing: linear;"></a-entity>
-        <a-entity id="Винт Мини Ветрогенератора" scale="0.12 0.12 0.12" position="12.483 -1.207 1.985" gltf-model="/models/windMiniTurbinePropeller.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1000; easing: linear;"></a-entity>
+        <a-entity id="Винт Мини Ветрогенератора" scale="0.12 0.12 0.12" position="12.483 -1.207 1.985" gltf-model="/models/windMiniTurbinePropeller.glb" animation="property: rotation; to: 0 -360 0; loop: true; dur: 1800; easing: linear;"></a-entity>
 
         <a-plane id="Плейн Подстанция [1]" onClick="clickOnName()" material="color: #000; opacity: 0.5;" position="-3.322 -1.6 -1.048" rotation="0 90 0" scale="0.72 0.63 1"></a-plane>
         <a-entity text="font: https://cdn.aframe.io/fonts/Exo2Bold.fnt; value: Substation; color: #ffffff; align: left;" id="t0__id" scale="1 1 1" position="-3.321 -1.356 -1.23" rotation="0 90 0"></a-entity>
@@ -81,17 +81,17 @@
             <?php $c += 1 ?>
         <?php endfor; ?>
 
-        <a-sky src="/img/sky.jpg" rotation="0 -130 0"></a-sky>
-        <a-camera scale="0.5 0.5 0.5" position="0 -1.45 0">
+        <a-sky src="/img/sky03.jpg" rotation="0 180 0"></a-sky>
+        <a-camera scale="1 1 1" position="0 -1.45 0">
             <a-cursor></a-cursor>
         </a-camera>
 
     </a-scene>
 
     <script src="/js/jquery.min.js"></script>
-    <!-- <script src="/js/index.js"></script> -->
+    <script src="/js/index.js"></script>
     <script src="/js/click.js"></script>
-    <!-- <script src="/js/name.js"></script> -->
+    <script src="/js/name.js"></script>
 </body>
 
 </html>

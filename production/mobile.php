@@ -84,24 +84,12 @@
 
         <a-sky src="/img/sky.jpg" rotation="0 -130 0"></a-sky>
 
-        <!-- <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true; enabled: true">
+        <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true; enabled: true">
             <a-entity id="cursor" camera look-controls position="0 0.8 0" rotation="0 180 0" cursor="rayOrigin: mouse" raycaster="objects: .interractible"></a-entity>
             <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: highPoly; color: #94c6ff"></a-entity>
             <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: highPoly; color: #94c6ff" laser-controls line="color: red; opacity: 0.75" raycaster="objects: .interractible"></a-entity>
             <a-entity id="choseHand"></a-entity>
-        </a-entity> -->
-
-        <a-entity camera="active: true" look-controls wasd-controls position="0 1.6 0" data-aframe-default-camera></a-entity>
-
-        <!-- <a-entity id="rig" position="25 10 0">
-            <a-entity id="camera" camera look-controls></a-entity>
-        </a-entity> -->
-
-        <!-- <a-entity camera look-controls position="0 1.6 0"></a-entity> -->
-
-        <!-- <a-entity camera look-controls>
-            <a-entity geometry="primitive: plane; height: 0.2; width: 0.2" position="0 0 -1" material="color: gray; opacity: 0.5"></a-entity>
-        </a-entity> -->
+        </a-entity>
 
     </a-scene>
 
